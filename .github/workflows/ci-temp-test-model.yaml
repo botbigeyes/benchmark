@@ -38,8 +38,8 @@ jobs:
             import flag_gems\
             flag_gems.enable(record=True, once=True, path='"'"'oplist.log'"'"')""")' torchbenchmark/__init__.py
           
-          run_command python install.py models  
+          run_command python install.py models hf_GPT2
           
-          run_command python run_benchmark.py test_bench --accuracy --device cuda --test eval --output output.json 
+          run_command python run_benchmark.py test_bench --accuracy --device cuda --test eval --output output.json --models hf_GPT2
 
           run_command sed -i '/self\.worker\.run($/,/^[[:space:]]*flag_gems\.enable.*oplist.log.*""")/d' torchbenchmark/__init__.py
