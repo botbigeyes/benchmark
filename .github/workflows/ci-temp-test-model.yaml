@@ -36,7 +36,7 @@ jobs:
           run_command sed -i '/self\.worker\.run("import torch")/a\        self.worker.run(\
             """\
             import flag_gems\
-            flag_gems.enable(record=False, once=True, path='"'"'oplist.log'"'"')""")' torchbenchmark/__init__.py
+            flag_gems.enable(record=True, once=True, path='"'"'oplist.log'"'"')""")' torchbenchmark/__init__.py
           
           run_command python install.py models hf_GPT2 
           
